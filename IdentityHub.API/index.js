@@ -2,9 +2,9 @@
 const express = require('express'),  
 bodyParser = require('body-parser'),
 logger = require('morgan'),
-config = require('./config/config');
+config = require('./app/config/config');
 //mongoose = require('mongoose'),
-router = require('./router');
+router = require('./app/router');
 //mongoose.set('debug', true);
 //mongoose.Promise=global.Promise
 //mongoose.connect(config.database,{useMongoClient: true});
