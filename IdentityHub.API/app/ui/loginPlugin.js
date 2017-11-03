@@ -3,7 +3,7 @@ const ejs=require('ejs'),
         config=require('../config/config');
 
 exports.showLoginPlugin=function(req,res,next){
-    res.render('loginPlugin',{msg: ""});
+    res.render('loginPlugin',{msg: req.query.msg,callbackUrl: req.query.callbackUrl});
 }
 exports.processLoginPlugin=function(req,res,next){
     let reqOpts={
@@ -16,10 +16,10 @@ exports.processLoginPlugin=function(req,res,next){
     }
     request.post(reqOpts,function(error,response,body){
         if (!error && response.statusCode==200){
-            return res.redirect('/ui/happylanding?token='+body.token);
+            return res.redirect(req.body.callbackUrl+'?token='+body.token);
         }
         else
-            res.render('loginPlugin',{msg: body.error});
+            res.redirect(config.baseUrl+'/ui/login?callbackUrl='+req.body.callbackUrl+'&msg=' + response.body.error)
     })
    
 }

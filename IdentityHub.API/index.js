@@ -1,11 +1,11 @@
 // Importing Node modules and initializing Express
 const express = require('express'),  
-      path=require('path'),
       bodyParser = require('body-parser'),
       logger = require('morgan'),
-      config = require('./app/config/config');
-      router = require('./app/router');
+      config = require('./app/config/config'),
+      router = require('./app/router'),
       mongoose = require('mongoose'),
+      path=require('path');
 
 //initialize mongoose
 mongoose.set('debug', config.mongooseDebug);
@@ -15,7 +15,7 @@ mongoose.connect(config.database,{useMongoClient: true});
 const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'app/ui'));
-
+app.use(express.static(path.join(__dirname, 'public')));      
 // Start the server
 const server = app.listen(config.port);  
 console.log('Your server is running on port ' + config.port + '.');  

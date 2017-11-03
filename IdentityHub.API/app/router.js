@@ -1,7 +1,8 @@
 const express = require('express'),
       loginPlugin=require('./ui/loginPlugin'),
       authController=require('./api/auth/authController'),
-      devController=require('./api/dev/devController');
+      devController=require('./api/dev/devController'),
+      path=require('path');
 
 module.exports = function(app) {  
 // Initializing route groups
@@ -9,6 +10,8 @@ const apiRoutes = express.Router(),
       authRoutes = express.Router(),
       uiRoutes=express.Router(),
       devRoutes=express.Router();
+
+
 
 uiRoutes.get('/login',loginPlugin.showLoginPlugin);
 uiRoutes.post('/login',loginPlugin.processLoginPlugin);
