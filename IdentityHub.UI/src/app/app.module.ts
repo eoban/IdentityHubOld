@@ -1,3 +1,4 @@
+import { SecurityApiUri } from './security/security.constants';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -13,7 +14,9 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
   ],
   exports:[],
-  providers: [],
+  providers: [
+      //  {provide: SecurityApiUri, useValue: 'http://localhost:3001'}
+      ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

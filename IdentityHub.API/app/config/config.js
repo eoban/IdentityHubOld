@@ -5,6 +5,5 @@ module.exports = {
     'database': 'mongodb://localhost:27017/AuthData',
     'mongooseDebug': true,
     // Setting port for server
-    'port': process.env.PORT || 3000,
-    'baseUrl':'http://localhost:3000'
+    'port': process.env.PORT || 3000
 }

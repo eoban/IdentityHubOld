@@ -12,10 +12,10 @@ const apiRoutes = express.Router(),
       devRoutes=express.Router();
 
 
-
+// /ui/login
 uiRoutes.get('/login',loginPlugin.showLoginPlugin);
 uiRoutes.post('/login',loginPlugin.processLoginPlugin);
-uiRoutes.get('/happylanding',loginPlugin.happyLanding);
+
 // /api/auth/register
 authRoutes.post('/register', authController.register);
 // /api/auth/token

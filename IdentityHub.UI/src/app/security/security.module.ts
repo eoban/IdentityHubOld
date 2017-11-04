@@ -1,14 +1,20 @@
+import { RouterModule } from '@angular/router';
+import { SecurityApiUri } from './security.constants';
 import { SecurityService } from './security.service';
-import { NgModule } from '@angular/core';
+import { NgModule,OpaqueToken } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
+
+
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  providers: [SecurityService],
+  providers: [
+    SecurityService
+  ],
   declarations: [LoginComponent],
-  exports:[LoginComponent]
+  exports: [LoginComponent]
 })
 export class SecurityModule { }
