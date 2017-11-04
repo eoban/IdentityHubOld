@@ -1,7 +1,4 @@
-iframe:focus { 
-        outline: none;
-    }
-    
-    iframe[seamless] { 
-        display: block;
-    } 
+iframe{
+    display: block;
+}
+

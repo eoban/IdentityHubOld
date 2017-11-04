@@ -1,4 +1,4 @@
 <p>
   
 </p>
-<iframe #loginBox (load)="onNavigate(loginBox)" seamless="seamless" frameborder='0' [src]="landingUrl" ></iframe>
+<iframe #loginBox (load)="onNavigate(loginBox)" seamless="seamless" frameborder='0' [src]="landingUrl" id="login" *ngIf="!token"></iframe>
