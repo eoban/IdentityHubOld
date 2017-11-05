@@ -1,4 +1,3 @@
-<p>
-  
-</p>
-<iframe #loginBox (load)="onNavigate(loginBox)" seamless="seamless" frameborder='0' [src]="landingUrl" id="login" *ngIf="!token"></iframe>
+<div *ngIf="!_userSvc.UserStatus">
+<iframe #loginBox (load)="onNavigate(loginBox)" seamless="seamless" frameborder='0' [src]="landingUrl" id="login" ></iframe>
+</div>

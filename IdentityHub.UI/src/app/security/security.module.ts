@@ -1,3 +1,4 @@
+import { UserService } from './user.service';
 import { RouterModule } from '@angular/router';
 import { SecurityApiUri } from './security.constants';
 import { SecurityService } from './security.service';
@@ -12,7 +13,8 @@ import { LoginComponent } from './login/login.component';
     CommonModule
   ],
   providers: [
-    SecurityService
+    SecurityService,
+    UserService
   ],
   declarations: [LoginComponent],
   exports: [LoginComponent]
